@@ -5,11 +5,11 @@
 */
 void jack_bauer(void)
 {
-int i, b;
+int a , b;
 
-i = 0;
+a = 0;
 
-while (i < 24)
+while (a < 24)
 {
 b = 0;
 
