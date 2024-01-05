@@ -7,18 +7,25 @@
   * @dest: parammeter
   * Return: dest
   */
+
 char *_strncat(char *dest, char *src, int n)
 {
+	int a, b;
 
-	int a = strlen(dest);
-	int b;
+	a = 0;
+	b = 0;
 
-	for (b = 0; b < n && *src != '\0'; b++)
+	while (dest[a] != '\0')
 	{
-		dest[a + 1] = *src;
-		src++;
+	a++;
 	}
-		dest[a + 1] = '\0';
-		return (dest);
+	while (b < n && src[b] != '\0')
+	{
+	dest[a] = src[b];
+	a++;
+	b++;
+	}
+	dest[a] = '\0';
+	return (dest);
 }
 
