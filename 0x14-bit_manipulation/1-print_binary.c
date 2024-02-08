@@ -1,49 +1,47 @@
 #include "main.h"
 
 /**
- * _pow - func calculates (base ^ power)
- * @base: base of the exponent
- * @power: power of the exponent
- *
+ * _pow - entry point
+ * @i: base of the exponent
+ * @k: power of the exponent
  * Return: value of (base ^ power)
  */
-unsigned long int _pow(unsigned int base, unsigned int power)
+unsigned long int _pow(unsigned int i, unsigned int k)
 {
 	unsigned long int num;
 	unsigned int a;
 
 	num = 1;
-	for (a = 1; a <= power; a++)
-		num *= base;
+	for (a = 1; a <= k; a++)
+		num *= i;
 	return (num);
 }
 
 /**
- * print_binary - prints a number in binary notation
- * @n: number to print
- *
- * Return: void
+ * print_binary - the binary representation of a number.
+ * @n: parameter
+ * Return: 0
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int divisor, check;
-	char flag;
+	unsigned long int a, b;
+	char c;
 
-	flag = 0;
-	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
-	while (divisor != 0)
+	c = 0;
+	a = _pow(2, sizeof(unsigned long int) * 8 - 1);
+	while (a != 0)
 	{
-		check = n & divisor;
-		if (check == divisor)
+		b = n & a;
+		if (b == a)
 		{
-			flag = 1;
+			c = 1;
 			_putchar('1');
 		}
-		else if (flag == 1 || divisor == 1)
+		else if (c == 1 || a == 1)
 		{
 			_putchar('0');
 		}
-		divisor >>= 1;
+		a >>= 1;
 	}
 }
 
