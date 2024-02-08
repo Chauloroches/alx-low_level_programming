@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * clear_bit - This prog sets the value of a bit to 0 at a given index
+ * clear_bit -  sets the value of a bit to 0 at a given index
  * @n: parameter
- * @index: index
- * Return: 1 if success, -1 if error
+ * @index: index parameter
+ * Return: 1 if it worked, or -1 if an error occurred
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
@@ -13,4 +13,3 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	*n &= ~(1 << index);
 	return (1);
 }
-
